@@ -1,0 +1,136 @@
+ <!-- ACTIVIDAD 4:
+
+Objetivo: practica la captura de datos del usuario y operaciones
+Descripción: crear un pequeño formulario donde el usuario ingrese dos números y 
+mostrar la suma. La primera variable (primer numero) deberá de tener el nombre de churpia1 y el segundo churpia2 y 
+para el resultado deberá llamarse caquita
+
+ALUMNA: AMÉRICA JAZMÍN ESTRADA HERNÁNDEZ -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Números</title>
+    <style>
+        /* Estilo general del cuerpo */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #74ebd5, #b7c2f5);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Estilo del formulario */
+        #sumaForm {
+            padding: 30px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.836);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Estilo para el título principal */
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Estilo de etiquetas */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        /* Estilo de los campos de entrada */
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #0ff; 
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            box-shadow: 0 0 5px #0ff; 
+            transition: all 0.3s ease;
+        }
+
+        /* Estilo al enfocar los campos de entrada */
+        input[type="number"]:focus {
+            border-color: #0ff;
+            box-shadow: 0 0 10px rgb(255, 0, 191); 
+            outline: none;
+        }
+
+        /* Estilo del botón */
+        button {
+            padding: 12px;
+            background-color: #f184d1c0;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Animación del botón al pasar el cursor */
+        button:hover {
+            background-color: #67d7c1;
+            transform: translateY(-3px);
+        }
+
+        /* Estilo del resultado */
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        /* Estilo del valor del resultado */
+        #caquita {
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <form id="sumaForm">
+        <h2>Formulario de Suma</h2>
+
+        <label for="churpia1">Primer Número:</label>
+        <input type="number" id="churpia1" name="churpia1" required>
+
+        <label for="churpia2">Segundo Número:</label>
+        <input type="number" id="churpia2" name="churpia2" required>
+
+        <button type="button" onclick="calcularSuma()">Calcular Suma</button>
+
+        <h3>Resultado: <span id="caquita"></span></h3>
+    </form>
+
+    <script>
+        function calcularSuma() {
+            // Obtener los valores de los inputs
+            const churpia1 = parseFloat(document.getElementById('churpia1').value);
+            const churpia2 = parseFloat(document.getElementById('churpia2').value);
+
+            // Calcular la suma
+            const caquita = churpia1 + churpia2;
+
+            // Mostrar el resultado
+            document.getElementById('caquita').textContent = caquita;
+        }
+    </script>
+</body>
+</html>
